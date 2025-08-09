@@ -14,7 +14,10 @@ app.use(express.json());
 
 app.use('/', schoolRoutes);
 
-app.get('/health', (req, res) => res.json({ status: 'ok' }));
+app.get('/', (req, res) => {
+  res.json({ message: 'API is running', status: 'ok' });
+});
+
 
 const port = process.env.PORT || 3000;
 
